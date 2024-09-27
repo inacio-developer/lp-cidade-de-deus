@@ -3,6 +3,7 @@
 header {
   @include mixins.widthFull();
   @include mixins.fixed();
+  max-width: 1550px;
   z-index: 7;
   top: 0;
   transition: 0.3s ease-in;

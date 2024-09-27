@@ -11,8 +11,10 @@ body {
   @include mixins.textPrimaryColor();
   @include mixins.bgAlternativeColor();
 
+  max-width: 1550px;
   font-size: variables.$font-size;
   font-weight: 400;
+  margin:auto;
 }
 
 ul {
