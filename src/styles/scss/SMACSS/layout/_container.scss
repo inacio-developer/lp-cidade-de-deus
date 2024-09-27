@@ -1,0 +1,48 @@
+@use "../base/mixins.scss";
+
+.container {
+  @include mixins.container();
+
+  &__head,
+  &__trailer,
+  &__plans {
+    @include mixins.flex();
+  }
+
+  &__head,
+  &__trailer {
+    @include mixins.padding(4, 0);
+  }
+
+  &__plans,
+  &__footer {
+    @include mixins.relative();
+  }
+
+  &__plans,
+  &__about {
+    gap: 3rem;
+  }
+
+  &__head {
+    justify-content: space-between;
+  }
+
+  &__about {
+    @include mixins.grid();
+    @include mixins.padding(14, 0);
+    grid-template-columns: 50% 50%;
+  }
+
+  &__characters {
+    @include mixins.padding(15, 0);
+    @include mixins.relative();
+    scroll-margin-top: 5rem;
+  }
+
+  &__plans {
+    @include mixins.padding(5, 0);
+    @include mixins.z-index();
+    flex-direction: column;
+  }
+}

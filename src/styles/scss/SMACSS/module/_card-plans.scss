@@ -1,0 +1,90 @@
+@use "../base/mixins.scss";
+@use "../base/variables";
+
+.cards__plans {
+    @include mixins.offDisplay();
+    gap: 2rem;
+
+    &--active {
+        @include mixins.flex();
+    }
+}
+
+.card__plans {
+    @include mixins.flex(space-between, left);
+    @include mixins.bgAlternativeColor();
+    @include mixins.padding(3, 2.5);
+    @include mixins.borderRadius(.5);
+    @include mixins.textHBOcolor();
+    flex-direction: column;
+    height: 38rem;
+    width: 36rem;
+
+    &__title {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #000066;
+    }
+
+    &__icon {
+        width: 1.3rem;
+    }
+
+    &__text {
+        display: block;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    &__text:first-of-type {
+        margin-top: 1.2rem;
+    }
+
+    &__text:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &__price {
+        @include mixins.fontBold();
+        display: block;
+        text-align: center;
+        font-size: 2.9rem;
+        margin-bottom: 3.5rem;
+    }
+
+    &__time {
+        font-size: 1.6rem;
+    }
+
+    &__link {
+        @include mixins.flex();
+        @include mixins.padding(1.5, 2.5);
+        @include mixins.bgHBOConstrast();
+        @include mixins.textAlternativeColor();
+        @include mixins.borderRadius(1.2);
+        @include mixins.fontBold();
+        @include mixins.textUppercase();
+        width: max-content;
+        margin: auto;
+        transition: ease-in-out .3s;
+    }
+
+    &__link:hover {
+        background-color: #080852;
+        box-shadow: 0px 5px 5px #080852;
+    }
+
+    &__icon {
+        margin-right: 1.4rem;
+    }
+
+    &__value {
+        @include mixins.fontMedium();
+        display: block;
+        font-size: 1.2rem;
+        margin-top: 0.6rem;
+    }
+}
+
+.cards__year  .card__plans__price {
+        margin-bottom: 2.6rem;
+}

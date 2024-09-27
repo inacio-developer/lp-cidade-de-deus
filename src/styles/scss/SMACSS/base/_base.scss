@@ -1,0 +1,31 @@
+@use "./variables.scss";
+@use "./mixins.scss";
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  @include mixins.fontRegular();
+  @include mixins.textPrimaryColor();
+  @include mixins.bgAlternativeColor();
+
+  font-size: variables.$font-size;
+  font-weight: 400;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

@@ -1,0 +1,44 @@
+@use "../base/mixins.scss";
+
+.about {
+    border-top: 0.4rem solid #c91009;
+    scroll-margin-top: 5rem;
+
+    &__side:first-of-type {
+        @include mixins.flex(flex-start, flex-start);
+        @include mixins.relative();
+        @include mixins.heightFull();
+        flex-direction: column;
+    }
+
+    &__title {
+        @include mixins.fontBold();
+        @include mixins.textUppercase();
+    }
+
+    &__quote {
+        @include mixins.fontQuote();
+        margin: auto;
+        font-size: 5rem;
+    }
+
+    &__img {
+        @include mixins.absolute();
+        width: 11rem;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__text {
+        line-height: 2.2rem;
+    }
+
+    &__text:first-of-type {
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+
+    &__text:last-of-type {
+        margin-top: 2rem;
+    }
+}

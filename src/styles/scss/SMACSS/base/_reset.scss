@@ -1,0 +1,7 @@
+@use "./mixins.scss";
+
+* {
+  @include mixins.padding(0);
+  @include mixins.margin(0);
+  box-sizing: border-box;
+}

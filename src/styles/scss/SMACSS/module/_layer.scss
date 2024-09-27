@@ -1,0 +1,40 @@
+@use "../base/mixins.scss";
+@use "../base/variables.scss";
+@use "../components/btn-link.scss";
+
+.layer {
+    @include mixins.heightFull();
+    @include mixins.padding(12, 0);
+    @include mixins.relative();
+    @include mixins.bgPrimaryColor();
+    @include mixins.flex();
+    @include mixins.bgImg("./img/layer_bg.jpg");
+    flex-direction: column;
+
+    &__overlap {
+        @include mixins.overallScreen();
+        @include mixins.overlap();
+    }
+
+    &__logo {
+        @include mixins.z-index();
+        width: 50rem;
+        margin-top: 5rem;
+    }
+
+    &__btn {
+        margin-top: 5rem;
+        @include mixins.z-index(); 
+    }
+
+    &__link {
+        @extend .btn;
+        width: 23rem;
+        @include mixins.flex();
+        display: inline-flex;
+    }
+
+    &__link:first-of-type {
+        margin-right: 2rem;
+    }
+}

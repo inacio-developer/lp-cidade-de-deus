@@ -1,0 +1,21 @@
+@use "../base/mixins.scss";
+
+.menu {
+    @include mixins.flex();
+    @include mixins.textUppercase();
+    gap: 2rem;
+
+    &__link {
+        @include mixins.fontBold();
+        @include mixins.textAlternativeColor();
+        transition: ease-in-out .5s;
+    }
+
+    &__link:hover {
+        color: #D1CCC7;;
+    }
+
+    &__mobile {
+        @include mixins.offDisplay();
+    }
+}

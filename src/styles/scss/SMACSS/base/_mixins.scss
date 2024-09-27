@@ -1,0 +1,153 @@
+@use "./variables";
+
+@mixin container($width: 90) {
+  width: #{$width + "%"};
+  margin: auto;
+}
+
+@mixin widthFull() {
+  width: 100%;
+}
+
+@mixin heightFull() {
+  height: 100%;
+}
+
+@mixin overallScreen() {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin z-index() {
+  z-index: 5;
+}
+
+@mixin padding($y, $x: #{$y}) {
+  padding: #{$y}rem #{$x}rem;
+}
+
+@mixin margin($y, $x: #{$y}) {
+  margin: #{$y}rem #{$x}rem;
+}
+
+@mixin offDisplay() {
+  display: none;
+}
+
+@mixin flex($justify-content: center, $align-items: center) {
+  display: flex;
+  justify-content: #{$justify-content};
+  align-items: #{$align-items};
+}
+
+@mixin grid() {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+@mixin absolute() {
+  position: absolute;
+}
+
+@mixin relative() {
+  position: relative;
+}
+
+@mixin fixed() {
+  position: fixed;
+}
+
+@mixin font() {
+  font-family: variables.$font-family;
+}
+
+@mixin fontQuote() {
+  font-family: "Special Elite";
+}
+
+@mixin fontSign() {
+  font-family: variables.$font-family-sign;
+}
+
+@mixin fontRegular() {
+  @include font();
+  font-weight: 200;
+}
+
+@mixin fontMedium() {
+  @include font();
+  font-weight: 600;
+}
+
+@mixin fontBold() {
+  @include font();
+  font-weight: 800;
+}
+
+@mixin textUppercase() {
+  text-transform: uppercase;
+}
+
+@mixin border($size, $type, $color) {
+  border: #{$size}rem #{$type} #{$color};
+}
+
+@mixin borderRadius($value) {
+  border-radius: #{$value}rem;
+}
+
+@mixin bgUrl($url) {
+  background-image: url(#{$url});
+}
+@mixin bgImg($url) {
+  @include bgUrl($url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin bgPrimaryColor() {
+  background-color: variables.$color-primary;
+}
+
+@mixin bgAlternativeColor() {
+  background-color: variables.$color-alternative;
+}
+
+@mixin bgContrastColor() {
+  background-color: variables.$color-contrast;
+}
+
+@mixin bgTransparent() {
+  background-color: transparent;
+}
+
+@mixin bgHBOAlternative() {
+  background-color: variables.$color-hbo-alternative;
+}
+
+@mixin bgHBOConstrast() {
+  background-color: variables.$color-hbo-contrast;
+}
+
+@mixin textPrimaryColor() {
+  color: variables.$color-primary;
+}
+
+@mixin textAlternativeColor() {
+  color: variables.$color-alternative;
+}
+
+@mixin textHBOcolor() {
+  color: variables.$color-hbo-contrast;
+}
+
+@mixin overlap() {
+  position: absolute;
+  background-image: linear-gradient(
+    variables.$color-contrast,
+    variables.$color-primary
+  );
+  opacity: 0.9;
+}

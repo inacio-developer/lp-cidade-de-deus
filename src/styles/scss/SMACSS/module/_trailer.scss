@@ -1,0 +1,18 @@
+@use "../base/mixins.scss";
+
+.trailer {
+    @include mixins.relative();
+    @include mixins.bgImg("./img/trailer_bg.jpg");
+    background-position: left;
+    scroll-margin-top: 10rem;
+
+    &__overlap {
+        @include mixins.overallScreen();
+        @include mixins.overlap();
+    }
+    
+    &__video {
+        @include mixins.z-index();
+        width: 70%;
+    }
+}

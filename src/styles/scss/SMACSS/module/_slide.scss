@@ -1,0 +1,16 @@
+@use "../base/mixins.scss";
+@use "./card.scss";
+@use "../components/btn-slide";
+
+.slide {
+    @include mixins.flex();
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4.5rem;
+    transform: translate3d(0px, 0px, 0px);
+
+    &__wrapper {
+        @include mixins.widthFull();
+        overflow-x: hidden
+    }
+}

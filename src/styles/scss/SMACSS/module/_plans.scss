@@ -1,0 +1,38 @@
+@use "../base/mixins.scss";
+@use "./card-plans.scss";
+@use "../components/btn-sign";
+
+.plans {
+    @include mixins.bgImg("./img/plans_bg.png");
+    @include mixins.flex();
+    @include mixins.textAlternativeColor();
+    @include mixins.relative();
+
+    &__title {
+        @include mixins.fontBold;
+        @include mixins.textUppercase();
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+    }
+
+    &__overlap {
+        @include mixins.overlap();
+        @include mixins.overallScreen();
+        background-image: linear-gradient( #5115cf, #3d0e9a);
+    }
+
+    &__btn {
+        @include mixins.relative();
+    }
+
+    &__alert {
+        @include mixins.padding(0, 20);
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 6rem;
+    }
+
+    &__link {
+        color: #0487D9;
+    }
+}

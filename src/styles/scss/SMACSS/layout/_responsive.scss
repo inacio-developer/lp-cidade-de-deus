@@ -1,0 +1,128 @@
+@use "../base/variables.scss";
+@use "../base/mixins.scss";
+
+@media screen and (max-width: variables.$tablet) {
+  .container {
+    &__about {
+      grid-template-columns: 100%;
+      justify-items: flex-start;
+    }
+  }
+
+  .about {
+    &__side {
+      @include mixins.widthFull();
+    }
+  }
+
+  .trailer {
+    &__video {
+      @include mixins.widthFull();
+    }
+  }
+
+  .cards__plans {
+    &--active {
+      flex-direction: column;
+    }
+  }
+
+  .footer {
+    &__links {
+      grid-template-columns: 50% 50%;
+    }
+  }
+}
+
+@media screen and (max-width: variables.$mobile) {
+  .menu {
+    &__item {
+      @include mixins.widthFull();
+      padding-left: 4rem;
+      padding-bottom: 3rem;
+      padding-top: 1rem;
+      border-bottom: 2px solid #750602;
+    }
+
+    &__mobile {
+      @include mixins.flex();
+      @include mixins.bgTransparent();
+
+      &--close {
+        @include mixins.offDisplay();
+      }
+
+      &--open {
+        @include mixins.bgPrimaryColor();
+        @include mixins.absolute();
+        @include mixins.flex();
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100vh;
+        left: 50%;
+        right: 0;
+        top: 0;
+      }
+
+      &__icon {
+        @include mixins.z-index();
+        @include mixins.relative();
+        @include mixins.offDisplay();
+        width: 4rem;
+        &--active {
+          @include mixins.flex();
+        }
+      }
+    }
+  }
+
+  .layer {
+    &__logo {
+      width: 30rem;
+    }
+
+    &__link:first-of-type {
+      margin-right: 0;
+    }
+    &__btn {
+      @include mixins.flex();
+
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  .about {
+    &__quote {
+      font-size: 2rem;
+    }
+  }
+
+  .footer {
+    &__logo {
+      @include mixins.offDisplay();
+    }
+  }
+
+  .plans {
+    &__title {
+      font-size: 2rem;
+    }
+    &__alert {
+      @include mixins.padding(0, 1);
+    }
+  }
+
+  .btns__sign {
+    @include mixins.padding(0);
+  }
+  .btn__sign {
+    font-size: 1.3rem;
+    width: 15rem;
+    letter-spacing: 0;
+
+    &__promotion {
+      right: 0;
+    }
+  }
+}

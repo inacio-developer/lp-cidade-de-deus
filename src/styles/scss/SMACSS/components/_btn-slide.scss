@@ -1,0 +1,35 @@
+@use "../base/mixins.scss";
+.slide__btn {
+  @include mixins.z-index();
+  @include mixins.absolute();
+  @include mixins.widthFull();
+  height: 33rem;
+
+  &__left,
+  &__right {
+    @include mixins.bgTransparent();
+    @include mixins.absolute();
+    @include mixins.border(0.1, solid, transparent);
+    @include mixins.heightFull();
+    width: 8rem;
+  }
+
+  &__left:hover,
+  &__right:hover {
+    @include mixins.border(0.1rem, solid, rgba(190, 190, 190, 0.507));
+    background-color: rgba(255, 255, 255, 0.678);
+  }
+
+  &__left {
+    left: 0.8rem;
+  }
+
+  &__right {
+    right: 0.8rem;
+  }
+
+  &__icon {
+    width: 5rem;
+    fill: #8f0905;
+  }
+}

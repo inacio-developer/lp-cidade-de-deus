@@ -1,0 +1,43 @@
+@use "../base/mixins.scss";
+
+.btns__sign {
+  @include mixins.flex();
+  @include mixins.borderRadius(3);
+  @include mixins.padding(0.4);
+  width: max-content;
+  background-color: rgba(255, 255, 255, 0.205);
+  margin-bottom: 2rem;
+}
+
+.btn__sign {
+  &__month,
+  &__year,
+  &__promotion {
+    @include mixins.fontBold();
+    @include mixins.textUppercase();
+  }
+
+  &__promotion {
+    @include mixins.absolute();
+    color: #a2d4f2;
+    right: 2rem;
+    top: -2.2rem;
+    background-color: transparent;
+  }
+
+  &__month,
+  &__year {
+    @include mixins.textAlternativeColor();
+    @include mixins.padding(1.3, 0);
+    width: 20rem;
+    background-color: transparent;
+    letter-spacing: 0.2rem;
+  }
+
+  &--active {
+    @include mixins.bgAlternativeColor();
+    @include mixins.textHBOcolor();
+    @include mixins.borderRadius(3);
+    transition: ease-in 0.3s;
+  }
+}

@@ -1,0 +1,9 @@
+@use "../base/mixins.scss";
+
+header {
+  @include mixins.widthFull();
+  @include mixins.fixed();
+  z-index: 7;
+  top: 0;
+  transition: 0.3s ease-in;
+}

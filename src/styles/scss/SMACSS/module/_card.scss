@@ -1,0 +1,53 @@
+@use "../base/mixins.scss";
+@use "../base/variables.scss";
+
+.card {
+    @include mixins.relative();
+    @include mixins.padding(3, 0);
+    @include mixins.borderRadius(.1);
+    @include mixins.flex();
+    flex-shrink: 0;
+    flex-direction: column;
+    width: 27rem;
+    height: 33rem;
+    
+    &__glass {
+        @include mixins.overallScreen();
+        @include mixins.absolute();
+        @include mixins.borderRadius(1.6);
+        @include mixins.border(.1, solid, variables.$color-primary);
+        @include mixins.z-index();
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(0.2px);
+        -webkit-backdrop-filter: blur(0.2px);
+    }
+
+    &__img {
+        width: 12rem;
+        height: 12rem;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+    }
+
+    &__actor {
+        @include mixins.textUppercase();
+        margin: 2rem 0 1rem 0;
+        font-size: 1.4rem;
+    }
+
+    &__name {
+        @include mixins.z-index();
+        @include mixins.fontBold();
+        @include mixins.fontSign();
+        font-size: 5rem;
+    }
+
+    &__line {
+        @include mixins.absolute();
+        @include mixins.border(.1, solid, variables.$color-primary);
+        display: block;
+        width: 18rem;
+        bottom: 7rem;
+    }
+}

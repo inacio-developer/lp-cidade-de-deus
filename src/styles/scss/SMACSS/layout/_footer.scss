@@ -1,0 +1,50 @@
+@use "../base/mixins.scss";
+@use "../base/variables.scss";
+
+footer {
+  @include mixins.bgHBOAlternative();
+  border-top: 0.2rem solid variables.$color-alternative;
+}
+
+.footer {
+  @include mixins.flex();
+
+  &__links {
+    @include mixins.padding(10, 0);
+    @include mixins.grid();
+    grid-template-columns: repeat(3, 33.3%);
+    row-gap: 0.3rem;
+    width: 98%;
+    justify-items: left;
+  }
+
+  &__link {
+    @include mixins.textAlternativeColor();
+    @include mixins.fontRegular();
+    font-size: 1.2rem;
+  }
+
+  &__link:hover {
+    color: #0487d9;
+    text-decoration: underline;
+  }
+
+  &__logo {
+    width: 14rem;
+    opacity: 0.9;
+  }
+
+  &__credits {
+    @include mixins.textAlternativeColor();
+    @include mixins.fontBold();
+    @include mixins.padding(4, 0);
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  &__author {
+    @include mixins.textAlternativeColor();
+    text-decoration: underline;
+  }
+}
